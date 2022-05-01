@@ -1,17 +1,21 @@
 <template>
   <div class="navbar" :class="activeClass">
     <div class="flex-between align-item pl30 pr30" :style="{ width: navbarWidth }">
-      <!-- <img :src="bmLogo" class="ml20 mr15 logo"> -->
+      <img :src="avatar" class="logo">
       <h1 class="title pl10">{{ title }} </h1>
+      <div />
+      <div class="color-fff-size-14  flex-end align-item nav-content pr10">
+        <span style="color:white;font-size:16px">实名制</span>
+      </div>
       <div class="color-fff-size-14  flex-end align-item nav-content pr10">
         <!-- <ul class="nav-tab color-fff-size-12 flex-end">
           <li class="pointer" :class="{ 'nav-active-tab': 0 === tabIndex }">共享门户</li>
         </ul> -->
 
         <div>
-          <el-dropdown class="avatar-container right-menu-item hover-effect" trigger="click" style="display: flex">
-            <div class="avatar-wrapper flex align-item">
-              <span style="color:white">劳务公司</span>
+          <el-dropdown trigger="click" style="display: flex">
+            <div>
+              <span style="color:white;font-size:16px">劳务公司</span>
               <i class="el-icon-caret-bottom" />
             </div>
             <el-dropdown-menu slot="dropdown" class="navbar-dropdown">
@@ -25,7 +29,9 @@
           </el-dropdown>
         </div>
       </div>
-
+      <div class="color-fff-size-14  flex-end align-item nav-content pr10"><span style="color:white;font-size:16px">考勤统计</span> </div>
+      <div class="color-fff-size-14  flex-end align-item nav-content pr10"><span style="color:white;font-size:16px">合同管理</span></div>
+      <div class="color-fff-size-14  flex-end align-item nav-content pr10"><span style="color:white;font-size:16px">系统管理</span> </div>
       <!-- 个人中心 -->
       <div class="right-menu" style="z-index: 2000">
         <el-dropdown class="avatar-container right-menu-item hover-effect" trigger="click" style="display: flex">
@@ -34,19 +40,8 @@
             <span class="user-name">{{ name }}</span>
             <i class="el-icon-caret-bottom" />
           </div>
-          <el-dropdown-menu slot="dropdown" class="navbar-dropdown">
-            <el-dropdown-item>
-              <span class="flex flex1" @click="gotoCenter">个人中心</span>
-            </el-dropdown-item>
-            <el-dropdown-item divided>
-              <span style="display:block;" @click="logout">退出登录</span>
-            </el-dropdown-item>
-          </el-dropdown-menu>
-        </el-dropdown>
-      </div>
+        </el-dropdown></div>
     </div>
-
-  </div>
 
   </div>
 </template>
@@ -87,13 +82,13 @@ export default {
   },
   watch: {
     $route: {
-      handler: function(val) {
-        if (val.path === '/index' || val.path === '/') {
-          this.activeClass = 'lone-home'
-        } else {
-          this.activeClass = 'no-home'
-        }
-      },
+      // handler: function(val) {
+      //   if (val.path === '/index' || val.path === '/') {
+      //     this.activeClass = 'lone-home'
+      //   } else {
+      //     this.activeClass = 'no-home'
+      //   }
+      // },
       immediate: true
     }
   },
@@ -139,7 +134,7 @@ export default {
   .navbar {
     /*width: calc(100% - 200px)!important;*/
     width: 100%;
-    height: 1.1rem;
+    height: 1.4rem;
     overflow: hidden;
     /*position: fixed;*/
     display: flex;
@@ -151,18 +146,18 @@ export default {
 
     /* logo */
     .logo{
-      width: .6rem;
-      height: .5rem;
+      width: .8rem;
+      height: .8rem;
     }
     .title{
-      font-size:16px;
+      font-size:18px;
       font-weight:bold;
       color:rgba(255,255,255,1);
     }
 
     .right-menu {
       height: 100%;
-      line-height: 1.1rem;
+      line-height: 1.3rem;
 
       &:focus {
         outline: none;
@@ -214,7 +209,7 @@ export default {
             /*cursor: pointer;*/
             /*position: absolute;*/
             color: #8A8E99;
-            font-size: 14px;
+            font-size: 16px;
             /*top: 8px;*/
           }
         }

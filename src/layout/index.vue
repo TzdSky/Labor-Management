@@ -22,8 +22,7 @@
 </template>
 
 <script>
-import { AppMain, Navbar, Sidebar, FooterMain } from './components'
-import Breadcrumb from '@/components/Breadcrumb'
+import { AppMain, Navbar } from './components'
 import ResizeMixin from './mixin/ResizeHandler'
 import { mapState } from 'vuex'
 
@@ -31,10 +30,7 @@ export default {
   name: 'Layout',
   components: {
     AppMain,
-    Navbar,
-    Sidebar,
-    FooterMain,
-    Breadcrumb
+    Navbar
   },
   mixins: [ResizeMixin],
   data() {
