@@ -1,139 +1,355 @@
 <template>
-  <div class="navbar">
-    <hamburger :is-active="sidebar.opened" class="hamburger-container" @toggleClick="toggleSideBar" />
+  <div class="navbar" :class="activeClass">
+    <div class="flex-between align-item pl30 pr30" :style="{ width: navbarWidth }">
+      <!-- <img :src="bmLogo" class="ml20 mr15 logo"> -->
+      <h1 class="title pl10">{{ title }} </h1>
+      <div class="color-fff-size-14  flex-end align-item nav-content pr10">
+        <!-- <ul class="nav-tab color-fff-size-12 flex-end">
+          <li class="pointer" :class="{ 'nav-active-tab': 0 === tabIndex }">共享门户</li>
+        </ul> -->
 
-    <breadcrumb class="breadcrumb-container" />
-
-    <div class="right-menu">
-      <el-dropdown class="avatar-container" trigger="click">
-        <div class="avatar-wrapper">
-          <img :src="avatar+'?imageView2/1/w/80/h/80'" class="user-avatar">
-          <i class="el-icon-caret-bottom" />
+        <div>
+          <el-dropdown class="avatar-container right-menu-item hover-effect" trigger="click" style="display: flex">
+            <div class="avatar-wrapper flex align-item">
+              <span style="color:white">劳务公司</span>
+              <i class="el-icon-caret-bottom" />
+            </div>
+            <el-dropdown-menu slot="dropdown" class="navbar-dropdown">
+              <el-dropdown-item>
+                <span class="flex flex1" @click="gotoCenter">分包商务</span>
+              </el-dropdown-item>
+              <el-dropdown-item divided>
+                <span style="display:block;" @click="logout">班组管理</span>
+              </el-dropdown-item>
+            </el-dropdown-menu>
+          </el-dropdown>
         </div>
-        <el-dropdown-menu slot="dropdown" class="user-dropdown">
-          <router-link to="/">
+      </div>
+
+      <!-- 个人中心 -->
+      <div class="right-menu" style="z-index: 2000">
+        <el-dropdown class="avatar-container right-menu-item hover-effect" trigger="click" style="display: flex">
+          <div class="avatar-wrapper flex align-item">
+            <img :src="avatar" class="user-avatar" @error="defImg()">
+            <span class="user-name">{{ name }}</span>
+            <i class="el-icon-caret-bottom" />
+          </div>
+          <el-dropdown-menu slot="dropdown" class="navbar-dropdown">
             <el-dropdown-item>
-              Home
+              <span class="flex flex1" @click="gotoCenter">个人中心</span>
             </el-dropdown-item>
-          </router-link>
-          <a target="_blank" href="https://github.com/PanJiaChen/vue-admin-template/">
-            <el-dropdown-item>Github</el-dropdown-item>
-          </a>
-          <a target="_blank" href="https://panjiachen.github.io/vue-element-admin-site/#/">
-            <el-dropdown-item>Docs</el-dropdown-item>
-          </a>
-          <el-dropdown-item divided @click.native="logout">
-            <span style="display:block;">Log Out</span>
-          </el-dropdown-item>
-        </el-dropdown-menu>
-      </el-dropdown>
+            <el-dropdown-item divided>
+              <span style="display:block;" @click="logout">退出登录</span>
+            </el-dropdown-item>
+          </el-dropdown-menu>
+        </el-dropdown>
+      </div>
     </div>
+
+  </div>
+
   </div>
 </template>
 
 <script>
 import { mapGetters } from 'vuex'
-import Breadcrumb from '@/components/Breadcrumb'
-import Hamburger from '@/components/Hamburger'
 
 export default {
   components: {
-    Breadcrumb,
-    Hamburger
+    // ErrorLog,
+    // Search
+  },
+  directives: {
+    // Clickoutside
+  },
+  data() {
+    return {
+      tabIndex: 0,
+      title: '核心高铁项目',
+      current: 0,
+      provinceName: [],
+      localName: [],
+      activeIndex: '1',
+      activeClass: '',
+      navbarWidth: '100%'
+    }
   },
   computed: {
     ...mapGetters([
       'sidebar',
-      'avatar'
-    ])
+      'avatar',
+      'device',
+      'name'
+    ]),
+    systemMenu() {
+      return this.$store.getters.systemMenu
+    }
+  },
+  watch: {
+    $route: {
+      handler: function(val) {
+        if (val.path === '/index' || val.path === '/') {
+          this.activeClass = 'lone-home'
+        } else {
+          this.activeClass = 'no-home'
+        }
+      },
+      immediate: true
+    }
+  },
+  created() {
+    this.isIE()
   },
   methods: {
+    defImg() {
+      const img = event.srcElement
+      img.src = this.defAvatar
+      img.onerror = null // 防止闪图
+    },
     toggleSideBar() {
       this.$store.dispatch('app/toggleSideBar')
     },
     async logout() {
-      await this.$store.dispatch('user/logout')
-      this.$router.push(`/login?redirect=${this.$route.fullPath}`)
+      // SmartCitySSO.logout()
+    },
+    handleSelect() {
+
+    },
+    gotoCenter() {
+      this.$router.push({
+        name: 'userCenter'
+      })
+    },
+    isIE() {
+      if (window.navigator.userAgent.indexOf('MSIE') >= 1) {
+        // console.log('ie')
+        this.navbarWidth = '94%'
+        // return true
+      } else {
+        // console.log('no ie')
+        this.navbarWidth = '100%'
+        // return false
+      }
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-.navbar {
-  height: 50px;
-  overflow: hidden;
-  position: relative;
-  background: #fff;
-  box-shadow: 0 1px 4px rgba(0,21,41,.08);
+  .navbar {
+    /*width: calc(100% - 200px)!important;*/
+    width: 100%;
+    height: 1.1rem;
+    overflow: hidden;
+    /*position: fixed;*/
+    display: flex;
+    white-space: nowrap;
+    background: #2A313B;
+    color: #DEE4F2;
+    box-shadow: 2px 5px 10px 0 rgba(174, 174, 174, 0.05);
+    // z-index: 99;
 
-  .hamburger-container {
-    line-height: 46px;
-    height: 100%;
-    float: left;
-    cursor: pointer;
-    transition: background .3s;
-    -webkit-tap-highlight-color:transparent;
-
-    &:hover {
-      background: rgba(0, 0, 0, .025)
+    /* logo */
+    .logo{
+      width: .6rem;
+      height: .5rem;
     }
-  }
-
-  .breadcrumb-container {
-    float: left;
-  }
-
-  .right-menu {
-    float: right;
-    height: 100%;
-    line-height: 50px;
-
-    &:focus {
-      outline: none;
+    .title{
+      font-size:16px;
+      font-weight:bold;
+      color:rgba(255,255,255,1);
     }
 
-    .right-menu-item {
-      display: inline-block;
-      padding: 0 8px;
+    .right-menu {
       height: 100%;
-      font-size: 18px;
-      color: #5a5e66;
-      vertical-align: text-bottom;
+      line-height: 1.1rem;
 
-      &.hover-effect {
+      &:focus {
+        outline: none;
+      }
+
+      .right-menu-item {
+        display: inline-block;
+        /*padding: 0 8px;*/
+        height: 100%;
+        font-size: 18px;
+        color: #5a5e66;
+        /*vertical-align: text-bottom;*/
+
+        &.hover-effect {
+          cursor: pointer;
+          transition: background .3s;
+          &:hover {
+            background: rgba(0, 0, 0, .025)
+          }
+        }
+      }
+      /* .navbar-dropdown{
+        width: 2rem!important;
+        top: 1.2rem;
+      } */
+      .el-popper[x-placement^="bottom"]{
+        margin-top: 0!important;
+      }
+
+      .avatar-container {
+
+        .avatar-wrapper {
+          /*position: relative;*/
+          /* 用户头像 */
+          .user-avatar {
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+          }
+          /* 用户名 */
+          .user-name{
+            display: inline-block;
+            font-size: 14px;
+            color: #8A8E99;
+            margin: 0 10px 0 5px;
+          }
+          .el-icon-caret-bottom {
+            /*cursor: pointer;*/
+            /*position: absolute;*/
+            color: #8A8E99;
+            font-size: 14px;
+            /*top: 8px;*/
+          }
+        }
+      }
+
+      /* 注册 */
+      .avatar-login{
+        font-size:12px;
+        padding: 0 30px 0 0;
+        font-weight:400;
+        color:rgba(255,255,255,1);
+        &:hover{
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .navbar-dropdown{
+    width: 2.4rem;
+
+    right: 0!important;
+  }
+  .select-like{
+    margin-left: .6rem;
+    padding: 0 .3rem;
+    min-width: 3.2rem;
+    height: .9rem;
+    line-height: .8rem;
+    background:rgba(56,62,77,1);
+    position: relative;
+    z-index: 98;
+    .place-name{
+      font-size: .24rem;
+      margin-left: 5px;
+      font-weight: 400;
+      color:rgba(138,142,153,1);
+    }
+    .el-icon-caret-bottom{
+      color: #8A8E99;
+      font-size: 16px;
+    }
+    [class^="el-icon-"], [class*=" el-icon-"]{
+      line-height: .8rem;
+    }
+    &:hover{
+      cursor: pointer;
+    }
+  }
+  .select-like-down{
+    position: absolute;
+    width: 75%;
+    height: auto;
+    /*height: 100px;*/
+    margin-top: -2px;
+    z-index: 20000;
+    margin-left: .6rem;
+    padding: 11px;
+    background:rgba(56,62,77,1);
+    border-top: 1px solid #2B303B;
+    &>ul li{
+      &:first-child{
+        font-size: 12px;
+        font-weight:400;
+        color:rgba(138,142,153,1);
+        padding: 12px 25px;
+        white-space: nowrap;
+      }
+    }
+    .place-list-name li{
+      font-size: 12px;
+      font-weight:400;
+      color:rgba(138,142,153,1);
+      padding: 12px 25px;
+      &:hover{
         cursor: pointer;
-        transition: background .3s;
-
-        &:hover {
-          background: rgba(0, 0, 0, .025)
-        }
+        color: #ffffff;
       }
     }
+  }
+  .btn-25{
+    .el-button--medium{
+      padding: 0px .3rem;
+    }
+    .btn-size-12-color-397DFA{
+      height: .5rem;
+      background: rgba(57, 125, 250, 1);
+      border: none;
+      border-radius: 2px;
+      text-align: center;
+      vertical-align: middle;
+      line-height: .5rem;
+      font-size: .24rem;
+      font-weight: 400;
+      color: #ffffff;
 
-    .avatar-container {
-      margin-right: 30px;
-
-      .avatar-wrapper {
-        margin-top: 5px;
-        position: relative;
-
-        .user-avatar {
-          cursor: pointer;
-          width: 40px;
-          height: 40px;
-          border-radius: 10px;
-        }
-
-        .el-icon-caret-bottom {
-          cursor: pointer;
-          position: absolute;
-          right: -20px;
-          top: 25px;
-          font-size: 12px;
-        }
+      &:hover {
+        background-color: rgba(57, 125, 250, .8);
+        color: #ffffff;
+        cursor: pointer;
       }
     }
+  }
+  .navbar-dropdown{
+    z-index: 30000!important;
+  }
+
+ /* 顶部导航菜单 */
+.nav-tab {
+  li {
+    border: 1px solid transparent;
+    border-radius:2px;
+    padding: .1rem .2rem;
+    margin: 0 .5rem 0 0;
+  }
+  .nav-active-tab {
+    color: #00A4FF;
+    border-color: #00A4FF;
   }
 }
+    // .btn-25 /deep/.btn-size-12-color-397DFA{
+    //   height: .5rem;
+    //   background: rgba(57, 125, 250, 1);
+    //   border: none;
+    //   border-radius: 2px;
+    //   text-align: center;
+    //   vertical-align: middle;
+    //   line-height: .5rem;
+    //   font-size: .24rem;
+    //   font-weight: 400;
+    //   color: #ffffff;
+
+    //   &:hover {
+    //     background-color: rgba(57, 125, 250, .8);
+    //     color: #ffffff;
+    //     cursor: pointer;
+    //   }
+    // }
 </style>

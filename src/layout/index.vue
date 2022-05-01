@@ -1,38 +1,56 @@
 <template>
-  <div :class="classObj" class="app-wrapper">
-    <div v-if="device==='mobile'&&sidebar.opened" class="drawer-bg" @click="handleClickOutside" />
-    <sidebar class="sidebar-container" />
-    <div class="main-container">
-      <div :class="{'fixed-header':fixedHeader}">
+  <div :class="classObj" class="app-wrapper scroll_content">
+    <el-scrollbar style="height: 100vh;">
+      <div class="main-container">
+        <div style="height: 100px;width: 100%; z-index: 10000;" />
         <navbar />
+        <!-- <div style="width: 100%; z-index: 10000;">
+          <Sidebar class="sidebar-container pl20" :class="activeClass" />
+        </div> -->
+        <!-- <div class="flex-row" style="background: #F1F2F6">
+          <div v-show="activeClass == 'no-home'" class="w83">
+            <breadcrumb id="breadcrumb-container" class="breadcrumb-container" />
+          </div>
+        </div> -->
+        <app-main />
+        <!-- <div class="footer-container">
+          <FooterMain />
+        </div> -->
       </div>
-      <app-main />
-    </div>
+    </el-scrollbar>
   </div>
 </template>
 
 <script>
-import { Navbar, Sidebar, AppMain } from './components'
+import { AppMain, Navbar, Sidebar, FooterMain } from './components'
+import Breadcrumb from '@/components/Breadcrumb'
 import ResizeMixin from './mixin/ResizeHandler'
+import { mapState } from 'vuex'
 
 export default {
   name: 'Layout',
   components: {
+    AppMain,
     Navbar,
     Sidebar,
-    AppMain
+    FooterMain,
+    Breadcrumb
   },
   mixins: [ResizeMixin],
+  data() {
+    return {
+      visible: false,
+      menuFixed: false,
+      activeClass: ''
+    }
+  },
   computed: {
-    sidebar() {
-      return this.$store.state.app.sidebar
-    },
-    device() {
-      return this.$store.state.app.device
-    },
-    fixedHeader() {
-      return this.$store.state.settings.fixedHeader
-    },
+    ...mapState({
+      sidebar: state => state.app.sidebar,
+      device: state => state.app.device,
+      showSettings: state => state.settings.showSettings,
+      fixedHeader: state => state.settings.fixedHeader
+    }),
     classObj() {
       return {
         hideSidebar: !this.sidebar.opened,
@@ -40,6 +58,18 @@ export default {
         withoutAnimation: this.sidebar.withoutAnimation,
         mobile: this.device === 'mobile'
       }
+    }
+  },
+  watch: {
+    $route: {
+      handler: function(val) {
+        if (val.path === '/index' || val.path === '/') {
+          this.activeClass = 'lone-home'
+        } else {
+          this.activeClass = 'no-home'
+        }
+      },
+      immediate: true
     }
   },
   methods: {
@@ -59,11 +89,13 @@ export default {
     position: relative;
     height: 100%;
     width: 100%;
-    &.mobile.openSidebar{
+
+    &.mobile.openSidebar {
       position: fixed;
       top: 0;
     }
   }
+
   .drawer-bg {
     background: #000;
     opacity: 0.3;
@@ -79,15 +111,16 @@ export default {
     top: 0;
     right: 0;
     z-index: 9;
-    width: calc(100% - #{$sideBarWidth});
+    /*width: calc(100% - #{$sideBarWidth})!important;*/
     transition: width 0.28s;
   }
-
+/*
   .hideSidebar .fixed-header {
-    width: calc(100% - 54px)
-  }
+    width: calc(100% - 1.08rem)!important;
+  }*/
 
   .mobile .fixed-header {
     width: 100%;
   }
+
 </style>

@@ -1,0 +1,241 @@
+// tabs 的样式
+.tabs-content{
+  // 去掉头部的边距
+  .el-tabs__header{
+    background-color: #ffffff;
+    margin: 0;
+    padding-right: .4rem;
+  }
+  // 设置 表头的内容边距
+  .el-tabs__nav{
+    margin-right: .4rem;
+    margin-left: .4rem;
+    margin-top: 0.3rem;
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+  }
+
+  // tabs 的label
+  .tabs-label{
+    display: inline-block;
+    padding: 0 .2rem;
+    position: relative;
+    &:after{
+      content: '';
+      position: absolute;
+      display: inline-block;
+      margin-left: .6rem;
+      width: 1px;
+      height: .3rem;
+      background: #E0E1E6;
+      line-height: .3rem;
+    }
+  }
+
+  // 设置默认的 tabs item的样式
+  .el-tabs__item{
+    color: #252B3A;
+    height: .3rem;
+    line-height: .3rem;
+    //border-right: 1px solid #E0E1E6;
+    margin-bottom: .25rem;
+    &:last-child{
+      border-right: 0;
+      .tabs-label{
+        &:after{
+          background-color: #ffffff;
+        }
+      }
+    }
+
+  }
+
+  // 设置字体颜色：hover
+  .el-tabs__item:hover{
+    color: #526ECC;
+  }
+  // 点击之后的状态
+  .el-tabs__item.is-active{
+    color: #526ECC;
+  }
+  // 设置默认的 下划线
+  .el-tabs__nav-wrap{
+    &:after{
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 1px;
+      background-color: #E0E1E6;
+      margin-left: .4rem;
+    }
+  }
+  // 设置激活状态下划线的颜色
+  .el-tabs__active-bar{
+    background-color: #526ECC;
+  }
+}
+
+/* 子页面 tabs */
+.item1-tabs{
+  // 去掉头部的边距
+  .el-tabs__header{
+    background-color: #ffffff;
+    margin: 0;
+  }
+  // 设置 表头的内容边距
+  .el-tabs__nav{
+   /* margin-right: .4rem;
+    margin-left: .4rem;*/
+    margin-top: 0.3rem;
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+  }
+
+  // tabs 的label
+  .tabs-label{
+    display: inline-block;
+    padding: 0 .2rem;
+    position: relative;
+    &:after{
+      content: '';
+      position: absolute;
+      display: inline-block;
+      margin-left: .6rem;
+      width: 1px;
+      height: .3rem;
+      background: #E0E0E5;
+      line-height: .3rem;
+    }
+  }
+
+  // 设置默认的 tabs item的样式
+  .el-tabs__item{
+    color: #666666;
+    padding: 0;
+    font-size: .24rem;
+    height: .3rem;
+    line-height: .3rem;
+    margin-bottom: .25rem;
+    &:last-child{
+      border-right: 0;
+      .tabs-label{
+        &:after{
+          background-color: #ffffff;
+        }
+      }
+    }
+
+  }
+
+  // 设置字体颜色：hover
+  .el-tabs__item:hover{
+    color: #397DFA;
+    cursor: pointer;
+  }
+  // 点击之后的状态
+  .el-tabs__item.is-active{
+    color: #397DFA;
+  }
+  // 设置默认的 下划线
+  .el-tabs__nav-wrap{
+    &:after{
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 1px;
+      background-color: #E0E1E6;
+      //margin-left: .4rem;
+    }
+  }
+  // 设置激活状态下划线的颜色
+  .el-tabs__active-bar{
+    //background-color: #FFFFFF;
+    height: 0;
+  }
+}
+
+// 步骤条样式
+.steps-content{
+  .el-step.is-horizontal .el-step__line{
+    height: 0;
+  }
+  .el-step__line-inner{
+    border-width: 0!important;
+  }
+  .el-steps--horizontal{
+    height: .6rem;
+  }
+  /* 图标的背景色，边框 */
+  .el-step__icon.is-text{
+    border-width: 1px;
+    top: -0.44rem;
+    background: #EFF0F5;
+  }
+  /* 图标的大小，图标的字 */
+  .el-step__icon{
+    width: .36rem;
+    height: .36rem;
+    font-size: .24rem;
+  }
+  .el-step.is-horizontal{
+    display: flex;
+    flex-direction: row;
+    flex-basis: inherit!important;
+  }
+  .el-step__head{
+    width: auto;
+  }
+  .el-step__head.is-finish{
+    color: #526ECC;
+    border-color: #526ECC;;
+  }
+  .el-step__main{
+    margin-left: .06rem;
+    font-size: .24rem;
+    .steps-line{
+      width: 1.1rem;
+      height: 1px;
+      background: #ADB0B8;
+      margin: 0 .2rem 0 .1rem;
+      /*transition: width 2s linear;*/
+      transition: .15s ease-out;
+    }
+  }
+  .el-step__title{
+    font-size: .24rem;
+  }
+  /* 预处理状态 */
+  .el-step__head.is-wait,
+  .el-step__title.is-wait,
+  .el-step__head.is-process,
+  .el-step__title.is-process{
+    color: #575D6C;
+    border-color: #575D6C;
+    font-weight: 500
+
+  }
+  /* 激活状态 */
+  .el-step__title.is-finish{
+    color: #526ECC;
+  }
+  .is-actived{
+    .el-step__icon.is-text{
+      background: #526ECC!important;
+      color: #fff!important;
+      border-color: #526ECC!important;
+    }
+  }
+  .is-finished{
+    background: #526ECC!important;
+  }
+}

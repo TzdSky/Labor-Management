@@ -1,0 +1,204 @@
+@import './variables.scss';
+// color
+@mixin color($color) {
+  color: $color;
+}
+// size
+@mixin size($size) {
+  font-size: $size + px;
+}
+// font-weight
+@mixin weight($weight) {
+  font-weight: $weight;
+}
+// 333
+.color-333-size-12{
+  @include color($color333);
+  @include weight($weight400);
+  @include size($size12);
+}
+.color-333-size-14{
+  @include color($color333);
+  @include weight($weight400);
+  @include size($size14);
+}
+.color-333-size-16{
+  @include color($color333);
+  @include weight($weight400);
+  @include size($size16);
+}
+.color-333-size-18{
+  @include color($color333);
+  @include weight($weight400);
+  @include size($size18);
+}
+.color-333-size-32{
+  @include color($color333);
+  @include weight($weight400);
+  @include size($size32);
+}
+.color-333-size-40{
+  @include color($color333);
+  @include weight($weight400);
+  @include size(40);
+}
+// 999
+.color-999-size-12{
+  @include color($color999);
+  @include weight($weight400);
+  @include size($size12);
+}
+.color-999-size-14{
+  @include color($color999);
+  @include weight($weight400);
+  @include size($size14);
+}
+.color-999-size-18{
+  @include color($color999);
+  @include weight($weight400);
+  @include size($size18);
+}
+/* 666 */
+.color-666-size-12{
+  @include color($color666);
+  @include weight($weight400);
+  @include size($size12);
+}
+.color-666-size-13{
+  @include color($color666);
+  @include weight($weight400);
+  @include size($size13);
+}
+.color-666-size-14{
+  @include color($color666);
+  @include weight($weight400);
+  @include size($size14);
+}
+// 000
+.color-000-size-12{
+  @include color($color000);
+  @include weight($weight400);
+  @include size($size12);
+}
+.color-000-size-14{
+  @include color($color000);
+  @include weight($weight400);
+  @include size($size14);
+}
+.color-000-size-16{
+  @include color($color000);
+  @include weight($weight400);
+  @include size($size16);
+}
+.color-000-size-18{
+  @include color($color000);
+  @include weight($weight400);
+  @include size($size18);
+}
+.color-000-size-26{
+  @include color($color000);
+  @include weight($weight400);
+  @include size($size26);
+}
+// #fff
+.color-fff-size-12{
+  @include color($colorFFF);
+  @include weight($weight400);
+  @include size($size12);
+}
+.color-fff-size-14{
+  @include color($colorFFF);
+  @include weight($weight400);
+  @include size($size14);
+}
+.color-fff-size-16{
+  @include color($colorFFF);
+  @include weight($weight400);
+  @include size($size16);
+}
+.color-fff-size-18{
+  @include color($colorFFF);
+  @include weight($weight400);
+  @include size($size18);
+}
+.color-fff-size-20{
+  @include color($colorFFF);
+  @include weight($weight400);
+  @include size($size20);
+}
+.color-fff-size-22{
+  @include color($colorFFF);
+  @include weight($weight400);
+  @include size($size20);
+}
+.color-fff-size-24 {
+  @include color($colorFFF);
+  @include weight($weight400);
+  @include size($size24);
+}
+
+.color-fff-size-36 {
+  @include color($colorFFF);
+  @include weight($weight400);
+  @include size($size36);
+}
+
+// 397DFA
+.color-397DFA-size-12 {
+  @include color($color397DFA);
+  @include weight($weight400);
+  @include size($size12);
+}
+.color-397DFA-size-14 {
+  @include color($color397DFA);
+  @include weight($weight400);
+  @include size($size14);
+}
+
+// 343434
+.color-343434-size-14 {
+  @include color($color343434);
+  @include weight($weight400);
+  @include size($size14)
+}
+
+// CB0000
+.color-CB0000-size-16 {
+  color: #CB0000;
+  @include weight($weight400);
+  @include size($size16);
+}
+
+// 656565
+.color-656565-size-13 {
+  color: #656565;
+  @include weight($weight400);
+  @include size($size13)
+}
+.color-656565-size-14 {
+  color: #656565;
+  @include weight($weight400);
+  @include size($size14)
+}
+.color-656565-size-18 {
+  color: #656565;
+  @include weight($weight400);
+  @include size($size18)
+}
+
+// 0086F9
+.color-0086F9-size-12 {
+  color: #0086F9;
+  @include weight($weight400);
+  @include size($size12)
+}
+.color-0086F9-size-13 {
+  color: #0086F9;
+  @include weight($weight400);
+  @include size($size13)
+}
+.color-0086F9-size-14 {
+  color: #0086F9;
+  @include weight($weight400);
+  @include size($size14)
+}

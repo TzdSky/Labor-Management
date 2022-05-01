@@ -1,0 +1,185 @@
+.tree-component{
+  width: 4rem;
+  background-color: #fff;
+  border-top: 0;
+  height:100%;
+  overflow:hidden;
+  padding-bottom:9999px;
+  margin-bottom:-9999px;
+
+  // 横向滚动条
+  .el-scrollbar__bar.is-horizontal>div{
+    height: 0!important;
+  }
+  .el-scrollbar__bar.is-horizontal{
+    height: 0!important;
+  }
+
+  // 数据为空时
+  .el-tree__empty-text{
+    font-size: .28rem;
+  }
+
+  // 输入框
+  .el-input--medium .el-input__inner{
+    height: .6rem;
+    line-height: .6rem;
+    border-left: none;
+    border-top: none;
+    border-right: none;
+    border-color: #E9E9E9;
+    border-radius: 0px;
+    padding-left: 0;
+    color: #8E8E8E;
+    font-size: .28rem;
+  }
+  // 搜索图标
+  .search-icon{
+    font-size: .32rem;
+    color: #585D6B;
+    margin-top: .15rem;
+    margin-right: -0.1rem;
+  }
+
+  // 文件夹图标
+  .icon-wenjian,
+  .icon-doc-line{
+    color: #526ECC;
+    font-size: .32rem;
+  }
+  // 文件图标
+  .icon-doc-line{
+    padding-top: .05rem;
+    font-size: .36rem;
+  }
+
+  // 添加的按钮
+  .tree-add-button{
+    width: .44rem;
+    height: .44rem;
+    border-radius: 0;
+    margin-left: .2rem;
+    border: 0;
+    background-color: #E9EDFA;
+  }
+  .el-icon-plus{
+    font-size: .36rem;
+    display: block;
+    color: #526ECC;
+  }
+  .el-button--medium{
+    padding: 2px;
+  }
+
+  // 树的宽度
+  .filter-tree{
+    width: 4rem;
+  }
+  // 树内容的宽度,内容设置
+  .tree-node-content{
+    width: 4rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    word-break: break-all;
+  }
+  .text-font{
+    display: inline-block;
+    //width: 2rem;
+    padding-left: .1rem;
+    font-size: .28rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    word-break: break-all;
+    color: #252B3A;
+  }
+  // 激活状态
+  .text-font-active{
+    display: inline-block;
+    //width: 2.3rem;
+    padding-left: .1rem;
+    font-size: .28rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    word-break: break-all;
+    color: #526ECC;
+  }
+  // 节点信息内容
+  .el-tree-node__content{
+    width: 100%;
+    height: .7rem;
+    line-height: .7rem;
+    padding-left: .3rem;
+    padding-right: .3rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    word-break: break-all;
+  }
+  // 三角图标的样式
+  .el-tree-node__expand-icon{
+    font-size: .36rem;
+    color: #585D6B;
+  }
+  .el-tree-node__expand-icon.is-leaf{
+    font-size: .36rem;
+    color: transparent;
+  }
+  // 三角图标展开的样式
+  .el-tree-node__expand-icon.expanded{
+    //margin-top: -0.5rem;
+    margin-left: .15rem;
+  }
+  .el-tree-node__content > .el-tree-node__expand-icon{
+    padding: 0;
+    margin-top: -0.05rem;
+    padding-left: .2rem!important;
+  }
+  .el-tree-node__expand-icon.expanded{
+    color: #526ECC;
+    margin-top: -0.3rem;
+  }
+  .is-current.is-focusable.el-tree-node__expand-icon{
+    color: #526ECC;
+  }
+  // 鼠标放在内容上
+  .el-tree-node__content:hover{
+    background: #F3F5FC!important;
+  }
+  .el-tree-node__content:active{
+    background: #F3F5FC!important;
+  }
+
+  /* Tree node 提示 */
+  .alert-text{
+    position: absolute;
+    top: 4rem;
+    left: 6rem;
+    z-index: 9999;
+    font-size: .28rem;
+    padding: .2rem .3rem;
+    color: #ffff;
+    background-color: rgba(2,9,15, 0.5);
+  }
+
+ // 显示和隐藏按钮
+  .show-or-hidden{
+    width: .4rem;
+    height: .8rem;
+    border: 0;
+    background-color: #E9EDFA;
+    color: #526ECC;
+    vertical-align: middle;
+    &:hover{
+      background: #beccfa;
+      color: #252b3a;
+    }
+  }
+}
+
+

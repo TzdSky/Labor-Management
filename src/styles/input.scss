@@ -1,0 +1,712 @@
+// 普通输入框
+.input-28{
+  .el-input--medium{
+    vertical-align: middle;
+  }
+  .el-input--medium .el-input__inner{
+    width: 100%;
+    height: .56rem;
+    line-height: .56rem;
+    background:rgba(255,255,255,1);
+    border:1px solid rgba(173, 176, 184, 1);
+    border-radius:2px;
+    font-size: .24rem;
+    color: #252B3A;
+    font-weight:400;
+    padding: 0 .2rem;
+    &:focus{
+      border-color: #5e7ce0;
+    }
+  }
+  // 下拉框
+  .el-select{
+    vertical-align: middle;
+  }
+  // 下拉图标
+  .el-select .el-input .el-select__caret{
+    line-height: .56rem;
+    color: #585D6B;
+    &.is-reverse{
+      color: #5e7ce0;
+    }
+  }
+}
+
+// 前面有图标的输入框
+.input-28-prefix{
+  .el-input--medium{
+    vertical-align: middle;
+  }
+  .el-input--medium .el-input__inner,
+  .el-input__inner{
+    width: 100%;
+    height: .56rem;
+    line-height: .56rem;
+    vertical-align: middle;
+    background:rgba(255,255,255,1);
+    border:1px solid rgba(173, 176, 184, 1);
+    border-radius:2px;
+    font-size: .24rem;
+    color: #252B3A;
+    font-weight:400;
+    //padding: 0 .2rem;
+    &:focus{
+      border-color: #5e7ce0;
+    }
+  }
+  // 日期类型图标
+  .el-input__icon{
+    line-height: .8rem;
+  }
+
+  // 选择日期范围的输入框
+  .el-date-editor .el-range__icon,
+  .el-date-editor .el-range__close-icon{
+    line-height: .4rem;
+    width: .4rem;
+  }
+  .el-date-editor .el-range__close-icon{
+    line-height: .45rem;
+    margin-right: -0.15rem;
+  }
+  .el-date-editor .el-range-separator{
+    line-height: .45rem;
+    font-size: .24rem;
+    margin-right: .25rem;
+  }
+  .el-range-editor--medium .el-range-input{
+    font-size: .24rem;
+    line-height: 0;
+  }
+
+  .el-range-editor--medium.el-input__inner{
+   /* width: 100%;
+    height: .56rem;
+    line-height: .56rem;
+    background:rgba(255,255,255,1);
+    border:1px solid rgba(173, 176, 184, 1);
+    border-radius:2px;
+    font-size: .24rem;
+    color: #252B3A;
+    font-weight:400;*/
+    &:focus{
+      border-color: #5e7ce0;
+    }
+    .el-date-editor .el-range-input{
+      height: .56rem;
+      line-height: .56rem;
+      background:rgba(255,255,255,1);
+      border:1px solid rgba(173, 176, 184, 1);
+      border-radius:2px;
+      font-size: .24rem;
+      color: #252B3A;
+    }
+  }
+}
+
+// 不在表单中的带有图标的输入框
+.input-28-prefix-no-from{
+  // 日期类型图标
+  .el-input__icon{
+    line-height: .6rem;
+  }
+}
+
+// 输入框的禁止状态
+.input-28-disabled{
+  .el-input--medium{
+    vertical-align: middle;
+  }
+  .el-input--medium .el-input__inner{
+    width: 100%;
+    height: .56rem;
+    line-height: .56rem;
+    background: #f5f5f5;
+    border:1px solid rgba(173, 176, 184, 1);
+    border-radius:2px;
+    font-size: .24rem;
+    color: #999999;
+    font-weight:400;
+    padding: 0 .2rem;
+  }
+  // 下拉图标
+  .el-select .el-input .el-select__caret{
+    line-height: .56rem;
+    color: #585D6B;
+  }
+}
+
+/* 输入框35 */
+.input-35-no-border{
+  .el-input--medium{
+    vertical-align: middle;
+  }
+  .el-input--medium .el-input__inner{
+    width: 100%;
+    height: .7rem;
+    line-height: .7rem;
+    background:rgba(255,255,255,1);
+    border: none;
+    border-radius: 2px;
+    font-size: .24rem;
+    color: #999999;
+    font-weight:400;
+    padding: 0 .2rem;
+  }
+}
+.input-35 {
+  .el-input--medium{
+    vertical-align: middle;
+  }
+  .el-input--medium .el-input__inner{
+    width: 100%;
+    height: .7rem;
+    line-height: .7rem;
+    background:rgba(255,255,255,1);
+    border:.02rem solid #D8D8D8;
+    border-radius:2px;
+    font-size: .28rem;
+    color: #999999;
+    font-weight:400;
+    padding: 0 .2rem;
+    line-height: .7rem;
+  }
+  // 下拉框
+  .el-select{
+    vertical-align: middle;
+  }
+  // 下拉图标
+  .el-select .el-input .el-select__caret{
+    line-height: .56rem;
+    color: #585D6B;
+    &.is-reverse{
+      color: #5e7ce0;
+    }
+  }
+}
+.input-28-disabled{
+  .el-input--medium{
+    vertical-align: middle;
+  }
+  .el-input--medium .el-input__inner{
+    width: 100%;
+    height: .7rem;
+    line-height: .7rem;
+    background: #F9F9F9;
+    border:1px solid #D8D8D8;
+    border-radius:2px;
+    font-size: .24rem;
+    color: #9A9A9A;
+    font-weight:400;
+    padding: 0 .2rem;
+  }
+  // 下拉图标
+  .el-select .el-input .el-select__caret{
+    line-height: .7rem;
+    color: #585D6B;
+  }
+}
+
+.input-30-prefix{
+  .el-input--medium{
+    vertical-align: middle;
+  }
+  .el-input--medium .el-input__inner,
+  .el-input__inner{
+    width: 100%;
+    height: .6rem;
+    line-height: .6rem;
+    vertical-align: middle;
+    background:rgba(255,255,255,1);
+    border:1px solid #D8D8D8;
+    border-radius:2px;
+    font-size: .28rem;
+    color: #999;
+    font-weight:400;
+    //padding: 0 .2rem;
+  }
+  // 日期类型图标
+  .el-input__icon{
+    line-height: .8rem;
+  }
+
+  // 选择日期范围的输入框
+  .el-date-editor .el-range__icon,
+  .el-date-editor .el-range__close-icon{
+    line-height: .4rem;
+    width: .4rem;
+  }
+  .el-date-editor .el-range__close-icon{
+    line-height: .45rem;
+    margin-right: -0.15rem;
+  }
+  .el-date-editor .el-range-separator{
+    line-height: .45rem;
+    font-size: .24rem;
+    margin-right: .25rem;
+  }
+  .el-range-editor--medium .el-range-input{
+    font-size: .24rem;
+    line-height: 0;
+  }
+
+  .el-range-editor--medium.el-input__inner{
+
+    &:focus{
+      border-color: #5e7ce0;
+    }
+    .el-date-editor .el-range-input{
+      height: .56rem;
+      line-height: .56rem;
+      background:rgba(255,255,255,1);
+      border:1px solid rgba(173, 176, 184, 1);
+      border-radius:2px;
+      font-size: .24rem;
+      color: #252B3A;
+    }
+  }
+}
+
+// 不在表单中的带有图标的输入框
+.input-30-prefix-no-from{
+  // 日期类型图标
+  .el-input__icon{
+    line-height: .6rem;
+  }
+}
+
+// input-30
+.input-30 {
+  .el-input--medium{
+    vertical-align: middle;
+  }
+  .el-input--medium .el-input__inner{
+    width: 100%;
+    height: .6rem;
+    line-height: .6rem;
+    background:rgba(255,255,255,1);
+    border:.02rem solid #D8D8D8;
+    border-radius:2px;
+    font-size: .24rem;
+    color: #999999;
+    font-weight:400;
+    padding: 0 .2rem;
+    line-height: .6rem;
+  }
+  // 下拉框
+  .el-select{
+    vertical-align: middle;
+  }
+  // 下拉图标
+  .el-select .el-input .el-select__caret{
+    line-height: .56rem;
+    color: #585D6B;
+    &.is-reverse{
+      color: #5e7ce0;
+    }
+  }
+}
+
+//  下拉选择的内容设置
+.el-select-dropdown__list{
+  padding: 0;
+  font-size: .24rem;
+}
+.el-select-dropdown__item{
+  font-size: .24rem;
+}
+// 被选中的中的状态
+.el-select-dropdown__item.selected{
+  color: #526ECC;
+  font-size: .24rem;
+}
+// hover
+.el-select-dropdown__item.hover, .el-select-dropdown__item:hover{
+  background: #F3F5FC;
+  font-size: .24rem;
+}
+
+// 下拉菜单
+.el-dropdown-menu--medium .el-dropdown-menu__item.el-dropdown-menu__item--divided{
+  margin-top: 0;
+  &:before{
+    height: 0;
+  }
+}
+.el-dropdown-menu__item--divided{
+  border-top: none;
+}
+.el-dropdown-menu--medium{
+  padding: 0;
+}
+.el-dropdown-menu--medium .el-dropdown-menu__item{
+  font-size: .24rem;
+}
+.el-dropdown-menu__item:not(.is-disabled):hover,
+.el-dropdown-menu__item:focus{
+  background-color: #F3F5FC;
+  color: #526ECC;
+}
+
+// 表单内容
+.from-content{
+   label{
+    font-weight: 500;
+  }
+   // 表单文字左对齐
+   .el-form-item__label{
+     color: #252B3A;
+     text-align: left;
+     font-size: .24rem;
+     //position: absolute;
+     padding-left: .2rem;
+     padding-top: .03rem;
+   }
+  // 去掉表单 item 的margin-bottom
+  .el-form-item{
+    margin-bottom: .2rem;
+  }
+   // 错误信息
+  .el-form-item__error{
+    position: inherit;
+    min-height: .24rem;
+    line-height: .28rem;
+    padding-top: .02rem;
+  }
+  // 错误提示
+  .is-error .el-input__inner{
+    border: 1px solid #F56C6C;
+  }
+  // 内容
+  .el-form-item__content{
+    font-size: .24rem;
+    color: #252B3A;
+    font-weight: 500;
+  }
+
+  // 对表单有星号或者没有星号，文字依旧对齐
+  .el-form-item.is-required:not(.is-no-asterisk)>.el-form-item__label:before,
+  .el-form-item.is-required:not(.is-no-asterisk) .el-form-item__label-wrap>.el-form-item__label:before{
+    position: relative;
+    margin-left: -0.21rem;
+    margin-right: 0;
+    padding-right: .1rem;
+  }
+  // 多行文本框
+  .el-textarea__inner{
+    border: 1px solid rgba(173, 176, 184, 1);
+    border-radius: 2px;
+    font-size: .24rem;
+    color: #252B3A;
+    font-weight:400;
+    padding: 0 .2rem;
+    &:focus{
+      border-color: #5e7ce0;
+    }
+  }
+  // 多选和单选的字体
+  .el-checkbox__label,
+  .el-radio__label{
+    font-weight: 400;
+    font-size: .24rem;
+    color: #252B3A;
+  }
+
+  // 单选按钮类型的设置
+  .el-radio-button__inner{
+    height: .56rem;
+    line-height: .56rem;
+    color: #252B3A;
+    border: none;
+    background-color: #E9EDFA;
+  }
+  .el-radio-button:first-child .el-radio-button__inner{
+    border: none;
+    border-radius: 2px 0 0 2px;
+  }
+  .el-radio-button:last-child .el-radio-button__inner{
+    border: none;
+    border-radius: 2px 0 0 2px;
+  }
+  .el-radio-button--medium .el-radio-button__inner{
+    padding: 0 .5rem;
+    font-size: .24rem;
+  }
+  .el-radio-button__orig-radio:checked+.el-radio-button__inner{
+    background-color: #526ECC;
+    border-color: #526ECC;
+  }
+  // 表单中的问号
+  .icon-wenhao{
+    font-size: .26rem;
+    &:hover{
+      color: #526ECC;
+    }
+  }
+
+}
+
+// 表单no-error
+.no-error{
+  .el-form-item__error{
+    min-height: 0;
+    overflow: hidden;
+    line-height: 0;
+    padding: 0;
+  }
+}
+
+
+// 悬浮框的样式
+// 悬浮提示框的背景
+.el-tooltip__popper.is-dark{
+  //background: #343952;
+  background: #343952;
+  font-size: .24rem;
+  font-weight: 400;
+  border-radius: 0.04rem;
+  padding: .15rem .25rem;
+  max-width: 5rem;
+}
+.el-tooltip__popper[x-placement^="top"] .popper__arrow{
+  //border-top-color: #343952;
+  border-top-color: #343952;
+}
+.el-tooltip__popper[x-placement^="top"] .popper__arrow::after{
+  border-top-color: #343952;
+}
+
+// 全局的设置了日期选择器和范围，switch 开关
+// 时间选择器里的日期选中时居中
+.el-date-picker .el-date-table td span,
+.el-date-table td.start-date span,
+.el-date-table td.end-date span{
+  text-align: center;
+}
+.el-date-table td.start-date span,
+.el-date-table td.end-date span{
+  margin-left: -0.15rem;
+}
+.el-date-table th{
+  padding-left: .24rem;
+}
+.el-date-table td span{
+  left: 62.5%;
+}
+
+// 日期控件
+// 当天日期的颜色
+// hover
+.el-date-table td.today span,
+.el-date-table td.available:hover{
+  color: #526ECC;
+}
+// 选中的背景色
+.el-date-table td.current:not(.disabled) span,
+.el-date-table td.start-date span,
+.el-date-table td.end-date span{
+  background-color: #526ECC;
+}
+// 日期的边距调整
+.el-time-spinner{
+  padding-left: .4rem;
+}
+.el-time-panel__footer{
+  line-height: 0;
+}
+
+// switch控件
+.el-switch__core{
+  height: .36rem;
+  &:after{
+    top: 0;
+  }
+}
+// 复选框和单选框的文字内容
+.el-checkbox__input.is-checked+.el-checkbox__label,
+.el-radio__input.is-checked+.el-radio__label{
+  //color: #526ECC;
+  color: #397DFA;
+}
+// switch 开启的状态颜色，复选框和单选框选中的状态
+.el-switch.is-checked .el-switch__core,
+.el-checkbox__input.is-checked .el-checkbox__inner,
+.el-checkbox__input.is-indeterminate .el-checkbox__inner,
+.el-radio__input.is-checked .el-radio__inner{
+  /*border-color: #526ECC;
+  background-color: #526ECC;*/
+  border-color: #397DFA;
+  background: #397DFA;
+}
+
+// 分割线
+.divider{
+  .el-divider--horizontal{
+    height: .8px;
+  }
+  .el-divider{
+    background-color: #E9E9E9;
+  }
+  // 文字
+  .el-divider__text{
+    font-size: .32rem;
+    font-weight:400;
+    color: rgba(153,153,153,1);
+    padding: 0 .3rem;
+  }
+}
+
+// 标记
+.badge-dropdown{
+  padding: .35rem 0;
+  //  下拉框
+  .el-dropdown-menu__item{
+    margin: 0 .2rem;
+    padding: 0 .2rem;
+  }
+  .el-dropdown-menu__item span:first-child{
+    font-size: .24rem;
+    color: #999999;
+    line-height: .4rem;
+  }
+  .el-dropdown-menu__item span:last-child{
+    font-size: .32rem;
+    font-weight: 600;
+    color:rgba(37,43,58,1);
+  }
+  .el-dropdown-menu__item:not(.is-disabled):hover,
+  .el-dropdown-menu__item:focus,
+  .el-dropdown-menu__item:hover span{
+    color: #ffffff!important;
+    background: #526ECC;
+    border-radius: .16rem;
+  }
+}
+
+// input-38
+.input-38 {
+  .el-input--medium{
+    vertical-align: middle;
+  }
+  .el-input--medium .el-input__inner{
+    width: 100%;
+    height: .76rem;
+    line-height: .76rem;
+    background:#ffffff;
+    border:1px solid #D7D7D7;
+    border-radius:2px;
+    font-size: .28rem;
+    color: #333333;
+    font-weight:400;
+    padding: 0 .3rem;
+    &:focus{
+      border-color: #EEEEEE;
+    }
+  }
+  // 选择日期范围的输入框
+  .el-date-editor .el-range__icon,
+  .el-date-editor .el-range__close-icon{
+    line-height: .65rem;
+    width: .4rem;
+  }
+  .el-date-editor .el-range__close-icon{
+    line-height: .5rem;
+    margin-right: -0.15rem;
+  }
+  .el-date-editor .el-range-separator{
+    line-height: .65rem;
+    font-size: .28rem;
+    margin-right: .25rem;
+  }
+  .el-range-editor--medium .el-range-input{
+    font-size: .28rem;
+    line-height: 0;
+  }
+
+  .el-range-editor--medium.el-input__inner{
+
+    &:focus{
+      border-color: #5e7ce0;
+    }
+    .el-date-editor .el-range-input{
+      height: .76rem;
+      line-height: .76rem;
+      background:rgba(255,255,255,1);
+      border:1px solid rgba(173, 176, 184, 1);
+      border-radius: 0px;
+      font-size: .28rem;
+      color: #252B3A;
+    }
+  }
+  .el-range-editor--medium.el-input__inner {
+    height: .76rem;
+    border:1px solid #D7D7D7;
+    border-radius: 0px;
+  }
+}
+// input-40
+.input-40,
+.input-40-bg-EEE{
+  .el-input--medium{
+    vertical-align: middle;
+  }
+  .el-input--medium .el-input__inner{
+    width: 100%;
+    height: .8rem;
+    line-height: .8rem;
+    background:#EEEEEE;
+    border:1px solid #EEEEEE;
+    border-radius:0px;
+    font-size: .28rem;
+    color: #333333;
+    font-weight:400;
+    padding: 0 .2rem;
+    &:focus{
+      border-color: #EEEEEE;
+    }
+  }
+  // 下拉框
+  .el-select{
+    vertical-align: middle;
+  }
+  // 下拉图标
+  .el-select .el-input .el-select__caret{
+    line-height: .8rem;
+    color: #333333;
+    
+  }
+}
+.input-40{
+  .el-input--medium .el-input__inner{
+    background:#fff;
+    border:1px solid #DBDBDB;
+    // color: #999999;
+    &:focus{
+      border-color: #DBDBDB;
+    }
+  }
+  .el-select .el-input .el-select__caret{
+    color: #999999;
+  }
+}
+// 45
+.input-45 {
+  .el-input--medium{
+    vertical-align: middle;
+  }
+  .el-input--medium .el-input__inner{
+    width: 100%;
+    height: .9rem;
+    line-height: .9rem;
+    background:#ffffff;
+    border:1px solid #EEEEEE;
+    border-radius:0px;
+    font-size: .28rem;
+    color: #333333;
+    font-weight:400;
+    padding: 0 .3rem;
+    &:focus{
+      border-color: #EEEEEE;
+    }
+  }
+}
