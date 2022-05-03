@@ -36,8 +36,18 @@ module.exports = {
       warnings: false,
       errors: true
     },
+    proxy: {
+      '/labor/system': { // http://172.19.74.110:9230
+        target: 'http://localhost:8808',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/labor/system': ''
+        }
+      }
+    },
     before: require('./mock/mock-server.js')
   },
+
   configureWebpack: {
     // provide the app's title in webpack's name field, so that
     // it can be accessed in index.html to inject the correct title.
