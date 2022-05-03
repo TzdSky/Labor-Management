@@ -22,3 +22,12 @@ export function logout() {
     method: 'post'
   })
 }
+
+// 获取用户信息表
+export function getUserList(params) {
+  return request({
+    url: `/user/getUserList`,
+    method: 'post',
+    data: params
+  })
+}

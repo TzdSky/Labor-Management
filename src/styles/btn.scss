@@ -1,0 +1,406 @@
+@import './variables.scss';
+
+@mixin colorBtn($color) {
+  background: $color;
+
+  &:hover {
+    color: $color;
+
+    &:before,
+    &:after {
+      background: $color;
+    }
+  }
+}
+
+.blue-btn {
+  @include colorBtn($blue)
+}
+
+.light-blue-btn {
+  @include colorBtn($light-blue)
+}
+
+.red-btn {
+  @include colorBtn($red)
+}
+
+.pink-btn {
+  @include colorBtn($pink)
+}
+
+.green-btn {
+  @include colorBtn($green)
+}
+
+.tiffany-btn {
+  @include colorBtn($tiffany)
+}
+
+.yellow-btn {
+  @include colorBtn($yellow)
+}
+
+.pan-btn {
+  font-size: 14px;
+  color: #fff;
+  padding: 14px 36px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  transition: 600ms ease all;
+  position: relative;
+  display: inline-block;
+
+  &:hover {
+    background: #fff;
+
+    &:before,
+    &:after {
+      width: 100%;
+      transition: 600ms ease all;
+    }
+  }
+
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 2px;
+    width: 0;
+    transition: 400ms ease all;
+  }
+
+  &::after {
+    right: inherit;
+    top: inherit;
+    left: 0;
+    bottom: 0;
+  }
+}
+
+.custom-button {
+  display: inline-block;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  background: #fff;
+  color: #fff;
+  -webkit-appearance: none;
+  text-align: center;
+  box-sizing: border-box;
+  outline: 0;
+  margin: 0;
+  padding: 10px 15px;
+  font-size: 14px;
+  border-radius: 4px;
+}
+
+// 基础的增删查改按钮的样式
+// 高度为 28 的
+.btn-28 {
+  // 按钮背景为默认色,无边框的，一般为新增
+  .btn-size-12{
+    //width: 1.5rem;
+    height: .56rem;
+    background:rgba(243,245,252,1);
+    border: none;
+    border-radius:2px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: .56rem;
+    font-size: .24rem;
+    font-weight:400;
+    color: rgba(82,110,204,1);
+    &:hover {
+      background-color: #beccfa;
+      color: #252b3a;
+      cursor: pointer;
+    }
+  }
+
+  .btn-size-12-color-397DFA{
+    height: .56rem;
+    background:#397DFA;
+    border: none;
+    border-radius:2px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: .56rem;
+    font-size: .24rem;
+    font-weight:400;
+    color: #ffffff;
+    &:hover {
+      background-color: rgba(57,125,250,.8);;
+      color: #ffffff;
+      cursor: pointer;
+    }
+  }
+
+  // 按钮背景为 #526ECC， 一般出现的是确定，和下一步
+  .btn-size-12-color-526ecc{
+    height: .56rem;
+    background:#526ECC;
+    border: none;
+    border-radius:2px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: .56rem;
+    font-size: .24rem;
+    font-weight:400;
+    color: #ffffff;
+    &:hover {
+      background-color: rgba(82, 110, 204, .8);
+      color: #ffffff;
+      cursor: pointer;
+    }
+  }
+
+  // 按钮背景为白色，有边框的,一般为取消
+  .btn-size-12-color-white-border{
+    height: .56rem;
+    background: #ffffff;
+    border: .02rem solid #dfe1e6;
+    border-radius:2px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: .52rem;
+    font-size: .24rem;
+    font-weight:400;
+    color: #252B3A;
+    &:hover {
+      background-color: rgba(243,245,252,1);
+      color: #252b3a;
+      cursor: pointer;
+    }
+  }
+
+  // 按钮背景为红色，无边框，一般为有图标的按钮
+  .btn-size-12-color-F66F6A{
+    height: .56rem;
+    background:#F66F6A;
+    border: none;
+    border-radius:2px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: .56rem;
+    font-size: .24rem;
+    font-weight:400;
+    color: #ffffff;
+    &:hover {
+      background-color: rgba(246, 111, 106, .8);
+      color: #ffffff;
+      cursor: pointer;
+    }
+  }
+
+  // 按钮背景为灰色，无边框，一般为解除按钮
+  .btn-size-12-color-F1F1F1{
+    height: .56rem;
+    background:#F1F1F1;
+    border: none;
+    border-radius:2px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: .56rem;
+    font-size: .24rem;
+    font-weight:400;
+    color: #252B3A;
+    &:hover {
+      background-color: rgba(241, 241, 241, .8);
+      color: #252B3A;
+    }
+  }
+
+  .btn-size-14-color-526ecc{
+    height: .56rem;
+    background:#526ECC;
+    border: none;
+    border-radius:2px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: .56rem;
+    font-size: .24rem;
+    font-weight:400;
+    color: #ffffff;
+    &:hover {
+      background-color: rgba(82, 110, 204, .8);
+      color: #ffffff;
+      cursor: pointer;
+    }
+  }
+  .btn-size-14-color-white-border{
+    height: .56rem;
+    background: #ffffff;
+    border: .02rem solid #DBDBDB;
+    border-radius:2px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: .52rem;
+    font-size: .24rem;
+    font-weight:400;
+    color: #252B3A;
+    &:hover {
+      background-color: rgba(243,245,252,1);
+      color: #252b3a;
+      cursor: pointer;
+    }
+  }
+
+  // 设置按钮的边距
+  .el-button--medium{
+    padding: 0 .3rem;
+  }
+}
+// 高度为 30
+.btn-30 {
+  // 按钮背景为 #526ECC， 一般出现的是确定，和下一步
+  .btn-size-14-color-526ecc{
+    height: .6rem;
+    background:#526ECC;
+    border: none;
+    border-radius:2px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: .6rem;
+    font-size: .28rem;
+    font-weight:400;
+    color: #ffffff;
+    &:hover {
+      background-color: rgba(82, 110, 204, .8);
+      color: #ffffff;
+      cursor: pointer;
+    }
+  }
+  .btn-size-14-color-ADB0B8 {
+    height: .6rem;
+    background:rgba(255,255,255,1);
+    border:1px solid rgba(173, 176, 184, 1);
+    border-radius:2px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: .6rem;
+    font-size: .28rem;
+    box-sizing: border-box;
+    color: #333333;
+  }
+  .btn-size-14-color-0087F9 {
+    background: #0087F9;
+    &:hover {
+      background-color: rgba(0, 135, 249, .8);
+    }
+  }
+  .btn-size-14-color-FFFBF6 {
+    background: #FFFBF6;
+    border: 1px solid #FEE1BB;
+    color: #CB3300;
+    &:hover {
+      color: #CB3300;
+      background-color: rgba(254, 225, 187, .6);
+    }
+  }
+  // 设置按钮的边距
+  .el-button--medium{
+    padding: 0 .3rem;
+  }
+}
+
+// 高度为 32
+// 高度为 34
+// 高度为 36
+// 高度为 38
+// 高度为 40
+.btn-45 {
+  .el-input-group__append,
+  .el-input-group__prepend {
+    background: #2F76C9;
+    color: #FFFFFF;
+    border-color: #2F76C9;
+    border-radius:0px;
+  }
+  // 按钮背景为2F76C9,无边框的
+  .btn-size-14-color-2F76C9{
+    //width: 1.5rem;
+    height: .9rem;
+    background: #2F76C9;
+    border: none;
+    border-radius:2px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: .9rem;
+    font-size: .28rem;
+    font-weight:400;
+    color: #FFFFFF;
+    padding: 0 30px;
+    &:hover {
+      background-color: RGBA(47, 118, 201, .8);
+      color: #FFFFFF;
+      cursor: pointer;
+    }
+  }
+
+
+}
+
+// 功能性按钮，一般为搜索，和重置
+.btn-handle{
+  .btn-size-16{
+    width:.56rem;
+    height: .56rem;
+    background:rgba(255,255,255,1);
+    border: 1px solid rgba(173, 176, 184, 1);
+    border-radius: 2px;
+    font-size: .32rem;
+    color: #585D6B;
+    vertical-align: middle;
+    &:hover{
+      border-color: #5e7ce0;
+      color: #5e7ce0;
+    }
+  }
+  .el-button--medium{
+    padding: 0;
+  }
+}
+.btn-handle-30{
+  .btn-size-16{
+    width:.6rem;
+    height: .6rem;
+    background:rgba(255,255,255,1);
+    border: 1px solid rgba(173, 176, 184, 1);
+    border-radius: 2px;
+    font-size: .32rem;
+    color: #585D6B;
+    vertical-align: middle;
+    &:hover{
+      border-color: #5e7ce0;
+      color: #5e7ce0;
+    }
+  }
+  .el-button--medium{
+    padding: 0;
+  }
+}
+
+
+
+// 设置提示信息
+.el-message{
+  .el-icon-info{
+    font-size: .48rem;
+  }
+  // 提示成功的信息
+  .el-icon-success{
+    font-size: .48rem;
+  }
+  // 提示警告信息
+  .el-icon-warning{
+    font-size: .48rem;
+  }
+  //  提示错误的信息
+  .el-icon-error{
+    font-size: .48rem;
+  }
+}

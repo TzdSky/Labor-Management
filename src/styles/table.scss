@@ -1,0 +1,318 @@
+
+// 页面的展示表格
+.page-table {
+  .el-table th.gutter{
+    display: table-cell!important;
+ }
+  .el-table {
+    border: 1px solid #D7D7D7;
+    border-bottom: 0;
+  }
+  .el-table--scrollable-x .el-table__body-wrapper{
+    overflow-x: hidden;
+  }
+  // 去掉 table 的 th， td 的 内边距
+  .el-table--medium th, .el-table--medium td{
+    padding: 0;
+  }
+  // 设置鼠标放在表格上高亮
+  .el-table--enable-row-hover .el-table__body tr:hover > td {
+    background-color: #f9faff;
+  }
+  .el-table--striped .el-table__body tr.el-table__row--striped td {
+    background-color: #ffffff;
+    background-clip: padding-box;
+  }
+  // 设置第一列距离左边30px，最后一个距离右边30px
+  .el-table th:first-child,
+  .el-table td:first-child {
+    padding-left: .46rem;
+  }
+  .el-table th:last-child,
+  .el-table td:last-child {
+    padding-right: .46rem;
+  }
+  //  设置table的th
+  .el-table th.is-leaf{
+    background-color: #F9F9F9;
+    font-weight: 400;
+    // height: .6rem;
+    padding-top: .1435rem;
+    padding-bottom: .1435rem;
+    font-size: .28rem;
+    color: #000000;
+  }
+  //  设置 table 的 td
+  .el-table td{
+    height: .76rem;
+    color: #000000;
+    font-size: .28rem;
+    border-bottom: 1px solid #d7d7d7!important;
+  }
+  // 
+  .el-table th.is-leaf {
+     border-bottom: 1px solid #d7d7d7!important;
+   }
+
+  // 表格没有数据的样式
+  .el-table__empty-text{
+    text-align: center;
+    width: 100%;
+    color: #000;
+    font-size: 0.24rem;
+  }
+  .el-table__empty-block{
+    min-height: 40px;
+  }
+  .el-table__empty-text{
+    line-height: 40px;
+  }
+  // 表格的链接
+  .link-type{
+    color: #0077D5;
+    &:focus{
+      color: #0077D5;
+    }
+    &:hover{
+      color: #0077D5;
+    }
+  }
+
+ // 复选框
+  .el-table-column--selection .cell{
+    padding-left: .2rem;
+  }
+}
+// 带边框的表格
+.page-border-table {
+  .el-table th.gutter{
+    display: table-cell!important;
+  }
+  .el-table--scrollable-x .el-table__body-wrapper{
+    overflow-x: hidden;
+  }
+  .el-table th {
+    background: #F9F9F9;
+  }
+  .el-table,
+  .el-table thead,
+  .el-table__empty-text {
+    color: #000;
+  }
+  // .el-table th:first-child,
+  // .el-table td:first-child,
+  .el-table--border th:first-child .cell,
+  .el-table--border td:first-child .cell,
+  .el-table .cell {
+    padding-left: .45rem!important;
+    box-sizing: border-box;
+  }
+  // 表格没有数据的样式
+  .el-table__empty-text{
+    text-align: center;
+  }
+  
+}
+
+// 分页的样式
+.page-pagination{
+  .el-pagination{
+    padding: 0;
+    line-height: 1rem;
+  }
+  // 单独处理箭头的部分, 和共多少条数据的字体样式
+  .el-pagination span:not([class*=suffix]), .el-pagination button{
+    min-width: 0;
+    height: .48rem;
+    line-height: .48rem;
+    color: #575D6C;
+    font-size: .24rem;
+  }
+
+  // 选择分页的样式
+  .el-input--mini .el-input__inner{
+    height: .485rem;
+    line-height: .485rem;
+    color: #575D6C;
+    font-size: .24rem;
+    padding-left: .06rem;
+    border-radius: 0;
+    border-color: #ADB0B8;
+    //margin-top: .01rem;
+  }
+  .el-pagination .el-select .el-input .el-input__inner{
+    padding-right: .3rem;
+    border-radius: 0;
+  }
+  .el-pagination .el-select .el-input{
+    width: 1.5rem;
+  }
+  .el-select .el-input .el-select__caret{
+    line-height: .48rem;
+    color: #575D6C;
+  }
+  .el-select-dropdown__item{
+    font-size: .24rem;
+  }
+
+  //  处理数字部分的宽度
+  .el-pager{
+    width: auto;
+  }
+
+  // 箭头和数字部分
+  .el-pagination.is-background .btn-prev, .el-pagination.is-background .btn-next,
+  .el-pagination.is-background .el-pager li{
+    //width:.48rem;
+    height:.49rem;
+    line-height: .485rem;
+    min-width: .48rem;
+    box-sizing: border-box;
+    background:rgba(255,255,255,1);
+    border-left:1px solid rgba(173, 176, 184, 1);
+    border-top:1px solid rgba(173, 176, 184, 1);
+    border-bottom:1px solid rgba(173, 176, 184, 1);
+    border-radius: 0;
+    margin: .015rem 0 0 0;
+    font-weight: 400;
+    &:last-child{
+      border-right: 1px solid rgba(173, 176, 184, 1);
+    }
+  }
+  .el-pagination .btn-prev .el-icon, .el-pagination .btn-next .el-icon{
+    padding-left: .1rem;
+    padding-top: .02rem;
+  }
+
+  // 数字部分的hover状态
+  .el-pagination.is-background .el-pager li:not(.disabled):hover{
+    color: #666666;
+  }
+  // active 状态
+  .el-pagination.is-background .el-pager li:not(.disabled).active{
+    background-color: #E9EDFA;
+    color: #575D6C;
+    font-weight: 400;
+  }
+
+  // 右边箭头
+  .el-pagination.is-background .btn-next{
+    border-right: 1px solid rgba(173, 176, 184, 1);
+    border-left: none;
+  }
+  // 箭头禁止状态
+  .el-pagination button:disabled{
+    color: #666666;
+    border-color: #333333;
+  }
+
+  // 编辑部分
+
+  .el-pagination__editor.el-input{
+    font-size: .24rem;
+    min-width: .38rem;
+    //width: auto;
+  }
+  // 编辑框
+  .el-pagination__editor.el-input .el-input__inner{
+    min-width: .48rem;
+    height: .485rem;
+    line-height: .485rem;
+    font-size: .24rem;
+    color: #575D6C;
+    border-radius: 0;
+    border-color: #ADB0B8;
+    margin-top: .002rem;
+    &:focus{
+      border-color: #5e7ce0;
+    }
+  }
+  .el-pagination__jump .el-input__inner{
+    padding: 0 .06rem;
+  }
+
+}
+/* 子页面列表分页 */
+.page-list-pagination{
+  // active 状态
+  .el-pagination.is-background .el-pager li:not(.disabled).active{
+    background-color: #EDF4FD;
+    color: #397DFA;
+    font-weight: 400;
+    border-color: #709BEB;
+    &+li{
+      border-left-color: #709BEB;
+    }
+    &:last-child{
+      border-right-color: #709BEB;
+    }
+  }
+  // 编辑框
+  .el-pagination__editor.el-input .el-input__inner{
+    &:focus{
+      border-color: #397DFA;
+    }
+  }
+  .el-pagination__jump .el-input__inner{
+    padding: 0 .06rem;
+  }
+
+}
+
+// 弹窗样式
+.dialog-content{
+  .el-dialog{
+    margin-top: 0!important;
+  }
+  // 设置弹窗的头部
+  .el-dialog__header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .56rem 0 0 .64rem;
+    margin-bottom: 0;
+    // 弹窗标题
+    .el-dialog__title{
+      color: #252B3A;
+      font-size: .28rem;
+      font-weight: 500;
+    }
+    // 打叉按钮
+    .el-dialog__headerbtn{
+      top: .56rem;
+      right: .6rem;
+      font-size: .36rem;
+      color: #252B3A;
+      font-weight: 600;
+      &:hover{
+        color: #526ECC;
+      }
+    }
+  }
+
+  // 设置弹窗的 body
+  .el-dialog__body{
+    padding: .35rem .64rem 0 .64rem;
+    font-size: .24rem;
+  }
+
+  // 设置弹窗的 footer
+  .el-dialog__footer{
+    padding: 0;
+  }
+}
+
+// 标记
+.badge-content{
+  .el-badge__content.is-fixed{
+    top: .45rem;
+  }
+  .el-badge__content{
+    padding: 0 .08rem;
+    height: .28rem;
+    line-height: .28rem;
+    border-radius: .14rem;
+    font-size: .2rem;
+  }
+}
+

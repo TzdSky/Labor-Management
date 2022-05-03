@@ -1,25 +1,79 @@
+// base color
+$blue:#324157;
+$light-blue:#3A71A8;
+$red:#C03639;
+$pink: #E65D6E;
+$green: #30B08F;
+$tiffany: #4AB7BD;
+$yellow:#FEC171;
+$panGreen: #30B08F;
+$white: #ffffff;
+
+// 设置颜色
+$color333: #333;
+$color999: #999;
+$color666: #666;
+$color000: #000;
+$colorFFF: #fff;
+$color397DFA: #397DFA;
+$color252B3A: #252B3A;
+$color343434: #343434;
+
+// 设置字体粗细
+$weight400: 400;
+$weight500: 500;
+$weight600: 600;
+$weight700: 700;
+
+// 设置字体大小
+$size12: 12;
+$size13: 13;
+$size14: 14;
+$size16: 16;
+$size18: 18;
+$size20: 20;
+$size22: 22;
+$size24: 24;
+$size26: 26;
+$size26: 26;
+$size28: 28;
+$size30: 30;
+$size32: 32;
+$size36: 36;
+$size40: 40;
+$size50: 50;
+
 // sidebar
-$menuText:#bfcbd9;
-$menuActiveText:#409EFF;
-$subMenuActiveText:#f4f4f5; //https://github.com/ElemeFE/element/issues/12951
+// 下拉子元素
+$menuText:#fff;
+$menuHoverText:#00A4FF;
+$menuActiveText:#00A4FF;
+$subMenuHoverText: #00A4FF;
+$subMenuActiveText:#00A4FF; // https://github.com/ElemeFE/element/issues/12951
+// 背景部分
+$menuBg:#2A313B;
+$menuHover:#2A313B;
+$menuActive: #2A313B;
 
-$menuBg:#304156;
-$menuHover:#263445;
+$subMenuBg: #2A313B;
+$subMenuHover:#2A313B;
+$subMenuActive: #2A313B;
 
-$subMenuBg:#1f2d3d;
-$subMenuHover:#001528;
-
-$sideBarWidth: 210px;
+$sideBarWidth: 300px;
 
 // the :export directive is the magic sauce for webpack
 // https://www.bluematador.com/blog/how-to-share-variables-between-js-and-sass
 :export {
   menuText: $menuText;
+  menuHoverText: $menuHoverText;
   menuActiveText: $menuActiveText;
+  subMenuHoverText:$subMenuHoverText;
   subMenuActiveText: $subMenuActiveText;
   menuBg: $menuBg;
   menuHover: $menuHover;
+  menuActive: $menuActive;
   subMenuBg: $subMenuBg;
   subMenuHover: $subMenuHover;
+  subMenuActive:$subMenuActive;
   sideBarWidth: $sideBarWidth;
 }
