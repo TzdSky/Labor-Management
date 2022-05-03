@@ -5,7 +5,7 @@
       <h1 class="title pl10">{{ title }} </h1>
       <div />
       <div class="color-fff-size-14  flex-end align-item nav-content pr10">
-        <span style="color:white;font-size:16px">实名制</span>
+        <span style="color:white;font-size:16px;cursor: pointer" @click="gotoUser">实名制</span>
       </div>
       <div class="color-fff-size-14  flex-end align-item nav-content pr10">
         <!-- <ul class="nav-tab color-fff-size-12 flex-end">
@@ -15,7 +15,7 @@
         <div>
           <el-dropdown trigger="click" style="display: flex">
             <div>
-              <span style="color:white;font-size:16px">劳务公司</span>
+              <span style="color:white;font-size:16px;cursor: pointer">劳务公司</span>
               <i class="el-icon-caret-bottom" />
             </div>
             <el-dropdown-menu slot="dropdown" class="navbar-dropdown">
@@ -29,16 +29,15 @@
           </el-dropdown>
         </div>
       </div>
-      <div class="color-fff-size-14  flex-end align-item nav-content pr10"><span style="color:white;font-size:16px">考勤统计</span> </div>
-      <div class="color-fff-size-14  flex-end align-item nav-content pr10"><span style="color:white;font-size:16px">合同管理</span></div>
-      <div class="color-fff-size-14  flex-end align-item nav-content pr10"><span style="color:white;font-size:16px">系统管理</span> </div>
+      <div class="color-fff-size-14  flex-end align-item nav-content pr10"><span style="color:white;font-size:16px;cursor: pointer">考勤统计</span> </div>
+      <div class="color-fff-size-14  flex-end align-item nav-content pr10"><span style="color:white;font-size:16px;cursor: pointer">合同管理</span></div>
+      <div class="color-fff-size-14  flex-end align-item nav-content pr10"><span style="color:white;font-size:16px;cursor: pointer">系统管理</span> </div>
       <!-- 个人中心 -->
       <div class="right-menu" style="z-index: 2000">
         <el-dropdown class="avatar-container right-menu-item hover-effect" trigger="click" style="display: flex">
           <div class="avatar-wrapper flex align-item">
             <img :src="avatar" class="user-avatar" @error="defImg()">
             <span class="user-name">{{ name }}</span>
-            <i class="el-icon-caret-bottom" />
           </div>
         </el-dropdown></div>
     </div>
@@ -110,10 +109,14 @@ export default {
     handleSelect() {
 
     },
-    gotoCenter() {
+    gotoUser() {
       this.$router.push({
         name: 'userCenter'
       })
+    },
+
+    gotoCenter() {
+      this.$router.push('/labor')
     },
     isIE() {
       if (window.navigator.userAgent.indexOf('MSIE') >= 1) {
